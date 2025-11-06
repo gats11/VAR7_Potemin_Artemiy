@@ -1,0 +1,10 @@
+def find_max(arr, index):
+    if index == len(arr) - 1:
+        return arr[index]
+    next_max = find_max(arr, index + 1)
+    return max(arr[index], next_max)
+
+arr = [3, 5, 1, 9, 2]
+print("Максимальный элемент:", find_max(arr, 0))
+
+
