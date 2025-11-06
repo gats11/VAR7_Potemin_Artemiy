@@ -1,0 +1,16 @@
+import java.util.*;
+
+public class Main {
+    public static int findMax(int[] arr, int index) {
+        if (index == arr.length - 1) {
+            return arr[index];
+        }
+        int nextMax = findMax(arr, index + 1);
+        return Math.max(arr[index], nextMax);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 5, 1, 9, 2};
+        System.out.println("Максимальный элемент: " + findMax(arr, 0));
+    }
+}
