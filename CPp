@@ -1,0 +1,20 @@
+CPp
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int findMax(vector<int>& arr, int index) {
+    if (index == arr.size() - 1) {
+        return arr[index];
+    }
+    int nextMax = findMax(arr, index + 1);
+    return max(arr[index], nextMax);
+}
+
+int main() {
+    vector<int> arr = {3, 5, 1, 9, 2};
+    cout << "Максимальный элемент: " << findMax(arr, 0) << endl;
+    return 0;
+}
